@@ -13,6 +13,8 @@ Lines = file1.readlines()
 file2 = open(sys.argv[2], 'w', encoding='utf-8')
  
 count = 0
+#split = ';'
+split = '\t'
 # Strips the newline character
 buffer = ''
 for line in Lines:
@@ -22,8 +24,9 @@ for line in Lines:
             #print(buffer)
             file2.write(buffer+'\n')
         words = line.split(' ')
-        #print(words[0]+" "+words[1]+';'+words[2].rstrip()+';')
-        buffer = words[0]+" "+words[1]+';'+words[2].rstrip()+';'
+        #print(words[0]+" "+words[1]+split+words[2].rstrip()+split)
+        # For default detection. Uset '\t'
+        buffer = words[0]+words[1]+split+words[2].rstrip()+split
     elif line=='\n':
         pass	
     else:
