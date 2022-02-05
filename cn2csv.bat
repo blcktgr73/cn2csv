@@ -18,8 +18,8 @@ split = '\t'
 # Strips the newline character
 buffer = ''
 for line in Lines:
-    if "참석자" in line :
-        count += 1
+    if "참석자" in line:
+	    count += 1
         if count > 1:
             #print(buffer)
             file2.write(buffer+'\n')
